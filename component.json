@@ -1,0 +1,16 @@
+{
+  "name": "boot",
+  "repo": "jasonkuhrt/blog",
+  "description": "Blog of Jason Rose-Kuhrt",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "the-gss/engine": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}

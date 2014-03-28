@@ -1,0 +1,21 @@
+/* All paragraph tags to have line-height greater than 16px
+and less than 1/12th the size of the window */
+
+body, html {width: 100%; height: 100%; margin: 0; padding: 0;}
+
+html {
+  font-size: 24px;
+  text-align: center;
+  font-family: Helvetica;
+}
+
+
+
+.box {
+  center-x: == ::window[center-x];
+  center-y: == ::window[center-y];
+  width: <= ::window[width] / 2;
+  height: == ::this[intrinsic-height];
+  background: red;
+  color: white;
+}
