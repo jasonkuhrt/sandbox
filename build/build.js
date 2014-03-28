@@ -28527,7 +28527,15 @@ if(typeof(exports) !== 'undefined') {\n\
 //@ sourceURL=the-gss-engine/vendor/gl-matrix.js"
 ));
 require.register("boot/index.js", Function("exports, require, module",
-"require('gss');//@ sourceURL=boot/index.js"
+"'use strict';\n\
+\n\
+\n\
+\n\
+window.GSS_CONFIG = {\n\
+  worker: 'dist/worker.js'\n\
+};\n\
+\n\
+require('gss');//@ sourceURL=boot/index.js"
 ));
 
 
