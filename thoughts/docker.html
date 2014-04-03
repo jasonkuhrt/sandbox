@@ -53,4 +53,38 @@ For example this:
 Starts a container with the process of "echo". "echo" terminates right after echoing the given text. At this termination time, the conatiner stops too.
 
 
+
+
+## Troubleshooting
+
+On OSX a strange error may occur when doing:
+
+    > docker login quay.io
+    2014/04/03 10:47:57 Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
+
+    > sudo docker -d                                                                                                                                                                                                                                                       master 5514a8c
+    Password:
+    2014/04/03 10:48:18 WARNING: Kernel version detection is available only on linux
+    [/private/var/lib/docker|070b27ec] +job serveapi(unix:///var/run/docker.sock)
+    [/private/var/lib/docker|070b27ec] +job initserver()
+    [/private/var/lib/docker|070b27ec.initserver()] Creating server
+    2014/04/03 10:48:18 Listening for HTTP on unix (/var/run/docker.sock)
+    [/private/var/lib/docker|070b27ec] +job init_networkdriver()
+    [/private/var/lib/docker|070b27ec.init_networkdriver()] creating new bridge for docker0
+    Could not find a free IP address range for interface 'docker0'. Please configure its address manually and run 'docker -b docker0'
+    [/private/var/lib/docker|070b27ec] -job init_networkdriver() = ERR (1)
+    Could not find a free IP address range for interface 'docker0'. Please configure its address manually and run 'docker -b docker0'
+    [/private/var/lib/docker|070b27ec] -job initserver() = ERR (1)
+    2014/04/03 10:48:18 Could not find a free IP address range for interface 'docker0'. Please configure its address manually and run 'docker -b docker0'
+
+This http://docs.quay.io/issues/odd-login-failure.html points to a workaround that has resolved the above:
+
+    > boot2docker restart                                                                                                                                                                                                                                                  master 5514a8c
+    [2014-04-03 10:52:48] Starting boot2docker-vm...
+    [2014-04-03 10:53:08] Started.
+
+    > docker login quay.io                                                                                                                                                                                                                                                 master 5514a8c
+    Username (jasonkuhrt):
+    Login Succeeded
+
 </pre>
