@@ -1,0 +1,56 @@
+<pre>
+
+
+
+
+## Two programs
+
+Docker is two programs:
+1. Docker Daemon
+2. Docker Client (interacts with daemon)
+
+Dameon/Client do not necessarially execute on same host.
+
+
+
+
+## Docker Index
+
+index.docker.io is a central repository of "container images".
+
+
+
+
+## Layers
+
+All Docker images are composed of cumulative layers.
+
+The process by which an image gains a layer:
+1. A modification to an image results in a new container, e.g.:
+
+    docker run learn/tutorial apt-get -y ping
+
+2. A commit of the container (id) creates a new image, e.g.:
+
+    docker commit 9382kspejrc learn/ping
+
+
+
+
+## Containers
+
+To be understood as a e.g. box (hence "container") housing a process,
+and thus all dependencies like filesystem, ram, shell, libraries, etc.
+
+A Container's process or deps are NOT running *by default*.
+
+You start a container by running a process in it. The container fully starts/stops with this process's life.
+
+For example this:
+
+    docker run learn/tutorial echo 'Hello World'
+
+Starts a container with the process of "echo". "echo" terminates right after echoing the given text. At this termination time, the conatiner stops too.
+
+
+</pre>
